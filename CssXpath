@@ -1,0 +1,19 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get("https://rahulshettyacademy.com/angularpractice/")
+driver.find_element(By.NAME, "email").send_keys("akashkulkarni@gmail.com")
+driver.find_element(By.ID, "exampleInputPassword1").send_keys("123456")
+
+#XPATH - //tagname[@attribute='value']
+#CSS - tagname[attribute='value']
+
+driver.find_element(By.CSS_SELECTOR, "input[name='name']").send_keys("akash")
+driver.find_element(By.XPATH, "//input[@value='Submit']").click()
+message = driver.find_element(By.CLASS_NAME, "alert-success").text
+print(message)
+assert "success" in message
+time.sleep(5)
