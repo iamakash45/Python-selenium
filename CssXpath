@@ -16,4 +16,8 @@ driver.find_element(By.XPATH, "//input[@value='Submit']").click()
 message = driver.find_element(By.CLASS_NAME, "alert-success").text
 print(message)
 assert "success" in message
+#Based on INDEX
+
+driver.find_element(By.XPATH, "(//input[@type='text'])[3]").send_keys("akashagain")
+
 time.sleep(5)
