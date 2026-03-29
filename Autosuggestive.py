@@ -16,3 +16,6 @@ for country in countries:
     if country.text == "India":
         country.click()
         break
+
+#assertion class(To check True or False)
+assert driver.find_element(By.ID, 'autosuggest').get_attribute('value') == 'India'
